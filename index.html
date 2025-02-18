@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AUTHENTIC SHOES</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         /* General Styles */
         body {
@@ -23,11 +24,27 @@
             padding: 15px 30px;
             background-color: #132442;
             color: white;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .navbar .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar img {
+            width: 50px;
+            height: auto;
         }
 
         .navbar h2 {
-            margin: 0;
-            font-size: 1.8rem;
+            margin: 5px 0;
+            font-size: 1.2rem;
+            text-align: center;
         }
 
         .navbar ul {
@@ -51,24 +68,84 @@
             color: #e7612d;
         }
 
-        /* Header */
-        .header {
+        .search-container {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            background-color: white;
-            padding: 10px;
+            gap: 10px;
         }
 
-        .header img {
-            width: 150px;
+        #search-bar {
+            padding: 8px 15px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+
+        #search-icon {
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        #search-icon:hover {
+            color: #e7612d;
+        }
+
+        /* Advertisement Board */
+        .advertisement-board {
+            width: 100%;
+            height: 200px;
+            background-color: #e7612d;
+            margin-top: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .advertisement-board img {
+            width: 100%;
             height: auto;
+            object-fit: cover;
         }
 
-        h1 {
-            font-family: Mistral, monospace;
-            font-size: 3rem;
-            margin: 10px 0;
+        /* Sidebar */
+        .sidebar {
+            width: 200px;
+            background-color: #132442;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-top: 80px; /* Push down below the navbar */
+            margin-left: 20px;
+            position: relative;
+        }
+
+        .sidebar h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            color: #e7612d;
         }
 
         /* Product Grid */
@@ -78,7 +155,10 @@
             gap: 20px;
             padding: 30px;
             justify-content: center;
+            margin-left: 240px; /* To avoid blocking the cards */
+            margin-top: -310px
         }
+
 
         /* Brand Card */
         .brand-card {
@@ -121,14 +201,16 @@
         .shop-button:hover {
             background-color: #132442;
         }
-
     </style>
 </head>
 <body>
 
 <!-- Navigation Bar -->
 <div class="navbar">
-    <h2>Authentic Shoes</h2>
+    <div class="logo-container">
+        <img src="brand images/logo.jpg" alt="Brand Logo">
+        <h2>Authentic Shoes</h2>
+    </div>
     <ul>
         <li><a href="#">🏠 Home</a></li>
         <li><a href="#">🛍️ Shop</a></li>
@@ -136,12 +218,28 @@
         <li><a href="#">🆕 New Arrivals</a></li>
         <li><a href="#">📞 Contact</a></li>
     </ul>
+    <div class="search-container">
+        <input type="text" placeholder="Search..." id="search-bar">
+        <i class="fas fa-search" id="search-icon"></i>
+    </div>
 </div>
 
-<!-- Header -->
-<div class="header">
-    <img src="brand images/logo.jpg" alt="Brand Logo">
-    <h1>AUTHENTIC SHOES</h1>
+<!-- Advertisement Board -->
+<div class="advertisement-board">
+    <img id="ad-image" src="brand images/ad1.jpg" alt="Advertisement">
+</div>
+
+<!-- Sidebar (Normal Flow) -->
+<div class="sidebar" id="sidebar">
+    <h3>Categories</h3>
+    <ul>
+        <li><a href="#">Sports Shoes</a></li>
+        <li><a href="#">Running Shoes</a></li>
+        <li><a href="#">Party Shoes</a></li>
+        <li><a href="#">Casual Shoes</a></li>
+        <li><a href="#">Slides</a></li>
+        <li><a href="#">Other Options</a></li>
+    </ul>
 </div>
 
 <!-- Product Section -->
@@ -149,6 +247,5 @@
 
 <!-- Link JavaScript -->
 <script src="index.js"></script>
-
 </body>
 </html>
