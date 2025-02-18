@@ -1,16 +1,43 @@
     // Advertisement image change every 30 seconds
-    let adImages = [
-        'brand images/ad1.jpg',
-        'brand images/ad2.jpg',
-        'brand images/ad3.jpg'
+    let advideo = [
+        'brand images/Sport Shoe Product Showcase Ad Template - Made with PosterMyWall.mp4'
+    ];
+
+    let ad2Images = [
+        'brand images/advert 1.jpg',
+        'brand images/advert 3.jpg',
+        'brand images/advert 4.jpg',
+        'brand images/advert 5.jpg',
+        'brand images/advert 7.jpg',
+        'brand images/advert 8.jpg',
+        'brand images/advert 9.jpg',
+        'brand images/advert 10.jpg',
+        'brand images/advert 11.jpg',
+        'brand images/advert 13.jpg',
+        'brand images/advert 14.jpg',
+        'brand images/advert16.jpg',
+        'brand images/advert17.jpg',
+        'brand images/advert18.jpg',
+        'brand images/advert19.jpg',
+        'brand images/advert22.jpg',
+        'brand images/advert23.jpg'
     ];
 
     let currentAdIndex = 0;
+    const videoElement = document.getElementById('ad-video');
+    let currentAd2Index =0;
 
     setInterval(() => {
-        currentAdIndex = (currentAdIndex + 1) % adImages.length;
-        document.getElementById('ad-image').src = adImages[currentAdIndex];
-    }, 30000); // Change ad every 30 seconds
+        currentAdIndex = (currentAdIndex + 1) % advideo.length;
+        videoElement.src = advideo[currentAdIndex];
+        videoElement.play(); // Ensures the video starts playing after source change
+    }, 10000); // Change video every 10 seconds
+
+    setInterval(() => {
+        currentAd2Index = (currentAd2Index + 1) % ad2Images.length;
+        document.getElementById('ad2-image').src = ad2Images[currentAd2Index];
+    }, 10000); // Change ad every 10 seconds
+
 
     // JS for Brand Cards (Already Provided)
     const brand = [
